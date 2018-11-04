@@ -1,3 +1,5 @@
+const path = require('path') 
+
 const express = require('express')
 const hbs = require('express-handlebars')
 
@@ -9,7 +11,9 @@ const server = express()
 
 server.engine('hbs', hbs({extname: 'hbs'}))
 server.set('view engine', 'hbs')
+server.set('views', path.join(__dirname, 'views'))
 server.use(express.urlencoded({extended: true}))
+server.use(express.static('public'))
 
 // Routes
 
