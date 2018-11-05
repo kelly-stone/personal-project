@@ -18,7 +18,7 @@
     "handlebars": "^4.0.11",
     "knex": "^0.15.0",
     "nodemon": "^1.17.5",
-    "sqlite3": "^4.0.1"
+    "sqlite3": "^4.0.3"
   },
   "devDependencies": {
     "jest": "^23.2.0"

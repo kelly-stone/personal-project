@@ -25,14 +25,34 @@ router.get('/children', (req, res) =>{
   })
 })
 
+router.post('/delete/:id', (req, res) => {
+  console.log(req.params.id);
+  console.log('this child will be deleted');
+  let id = req.params.id;
+  db.deleteChild(id)
+  .then(child => {
+    res.render('children', {child});
+  });
+});
 
 
-// router.get('/mychild', (req, res) => {
-//   db.getUsers()
-//     .then(users => {
-//       res.render('user-form')
-//     })
-// })
+ router.get('/addchild', (req, res) => {
+  db.addChild()
+    .then(data => {
+      res.render('child-form')
+    })
+})
+
+router.post('/child-form', (req, res) =>{
+
+  db.addChild(req.body. child_name,req.body.DOB, req.body.gender)
+    .then(() =>{
+      
+      res.redirect('/children')
+    })
+})
+
+
 
 
 
