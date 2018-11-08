@@ -26,28 +26,35 @@ ul li a{
     background-position: center;
     width: 100%;
     height: 580px;
-    padding: 160px 696px;
+    padding: 160px 0 0 696px;
     /* margin: 10vh auto; */
     color: whitesmoke;
     font-weight: 500;
     font-family: san-serif;
-}
-.list ul li{
-    display: inline-block;
+    
 }
 
 .listcol{
     display: flex;
     float: left;
 }
-
+.child-div {
+    display: inline-block;
+    min-width: 200px;
+    
+    
+}
+.child-list {
+    float: none;
+  
+}
 .child{
     list-style: none;
-    width:1000px;
-    padding-left: 60em;
+    /* width:1000px; */
+    /* padding-left: 60em; */
     
     font-size: 1.3em;
-    color: black;
+    color: whitesmoke;
 }
 
 .container{
@@ -68,3 +75,7 @@ ul li a{
     
     
 }
+
+
+
+

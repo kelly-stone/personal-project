@@ -26,26 +26,30 @@ router.get('/children', (req, res) =>{
 })
 
 router.post('/delete/:id', (req, res) => {
-  console.log(req.params.id);
-  console.log('this child will be deleted');
+ 
   let id = req.params.id;
   db.deleteChild(id)
-  .then(child => {
-    res.render('children', {child});
+
+  .then(data => {
+    
+    res.redirect('/children');
+
   });
 });
 
 
- router.get('/addchild', (req, res) => {
-  db.addChild()
-    .then(data => {
+ router.get('/addchild', (req, res) => {   
       res.render('child-form')
-    })
+  
 })
 
-router.post('/child-form', (req, res) =>{
-
-  db.addChild(req.body. child_name,req.body.DOB, req.body.gender)
+router.post('/addchild', (req, res) =>{
+const newData = {
+  child_name:req.body.child_name,
+  DOB: req.body.DOB,
+  gender:req.body.gender
+}
+  db.addChild(newData)
     .then(() =>{
       
       res.redirect('/children')

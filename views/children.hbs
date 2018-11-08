@@ -24,21 +24,19 @@
 
  <section class="list">
     {{#each child}}
-    <ul>
-    <li class="child">Child Name: {{childname}}</li>
-      <form method="POST" action="/delete/{{id}}">
-            <button type="delete">DELETE</button>
-    </form>
-    <li class="child">DOB: {{DOB}}</li>
-    <li class="child">{{gender}}</li>
-    {{!-- <li><a href="/child/diary">My Diary</a></li> --}}
-    {{!-- <button type="delete">DELETE</button> --}}
-    {{!-- <button type="more"><a href="/child/profile">MORE</a></button> --}} --}}
+    <div class="child-div">
+
+    <ul class="child-list">
+        <li class="child">Child Name: {{childname}}</li>
+        <li class="child">DOB: {{DOB}}</li>
+        <li class="child">{{gender}}</li>
+
    
     </ul>
     <form method="POST" action="/delete/{{id}}">
             <button type="delete">DELETE</button>
     </form> 
+    </div>
     {{/each}}
 </section> 
 
