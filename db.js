@@ -6,7 +6,8 @@ module.exports = {
   // getUser: getUser,
   getChildren,
   deleteChild,
-  addChild
+  addChild,
+  addDiary
 }
 
 function getChildren(testConn) {
@@ -23,17 +24,19 @@ function deleteChild(id, testConn) {
   
 }
 
-function addChild(profile, testConn) {
+function addChild(profile, testConn) { 
     const conn = testConn || connection
     return conn('child')
       .insert({ 'child_name': profile.child_name, 'DOB': profile.DOB, 'gender':profile.gender })
      
 }    
   
-  
-
-
-
+function addDiary(newDiary, testConn){
+  console.log(newDiary)
+    const conn = testConn || connection
+    return conn('diary')
+    .insert({"diary":newDiary})
+}
 
 
 

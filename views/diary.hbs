@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Diary</title>
+</head>
+
+<body>
+    <h1>{{childname}}Diary</h1>
+    <section>
+    <form action="/diary" method="post">
+        <input placeholder="what happen" type="text" name="diary"/>
+        {{!-- <input placeholder="photo" type="file" name="Image" /> --}}
+        <input type="submit" value="add diary" />
+{{!-- 
+        {{#each diary}}
+        <ul>
+            <li>{{child_name}}</li>
+        </ul>
+        {{#each}} --}}
+    </form>
+    </section>
+</body>
+
+</html>
