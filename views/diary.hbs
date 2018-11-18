@@ -10,19 +10,24 @@
 </head>
 
 <body>
-    <h1>{{childname}}Diary</h1>
+    <h1>{{child_name}}Diary</h1>
     <section>
     <form action="/diary" method="post">
-        <input placeholder="what happen" type="text" name="diary"/>
+        <input placeholder="what happen" type="text" name="diary" value="{{newDiary.diary}}"/>
         {{!-- <input placeholder="photo" type="file" name="Image" /> --}}
         <input type="submit" value="add diary" />
-{{!-- 
-        {{#each diary}}
-        <ul>
-            <li>{{child_name}}</li>
-        </ul>
-        {{#each}} --}}
     </form>
+
+   
+    <ul>
+     {{#each newDiary}}
+    
+        <li>{{id}}</li>
+        <li>{{diary}}</li>
+        <li>{{newDiary.diary}}</li>
+        
+    {{/each}}
+    </ul>
     </section>
 </body>
 

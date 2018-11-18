@@ -60,17 +60,23 @@ router.get('/diary', (req, res) =>{
 })
 
 router.post('/diary', (req, res) =>{
-  const newDiary=req.body.diary
+  const newDiary= {
+    diary: req.body.diary}
 
-  db.addDiary(newDiary)
+  console.log("diary:", newDiary)  
+
+  db.getNewDiary(newDiary)
  
-      .then(() =>{
-        // console.log(newDiary)
-        res.redirect('/diary')
-      .catch(err =>{
-        res.status(500).send("Couldn't insert diary")
-      })
-  })
+      .then(ids =>{
+        console.log("ids", ids)
+        newDiary.id=ids[0]
+        return db.insertNewDiary(newDiary)
+          .then((ids) =>{
+            console.log('id:', ids)
+            res.render('diary',newDiary)
+           })
+           })
+
 
 
 })
