@@ -60,20 +60,19 @@ router.get('/diary', (req, res) =>{
 })
 
 router.post('/diary', (req, res) =>{
-  const newDiary= {
-    diary: req.body.diary}
+  const newDiary= {diary: req.body.diary}
 
-  console.log("diary:", newDiary)  
+  // console.log("diary:", newDiary)  
 
-  db.getNewDiary(newDiary)
+  db.insertNewDiary(newDiary)
  
       .then(ids =>{
-        console.log("ids", ids)
+        //  console.log("ids", ids)
         newDiary.id=ids[0]
-        return db.insertNewDiary(newDiary)
-          .then((ids) =>{
-            console.log('id:', ids)
-            res.render('diary',newDiary)
+        return db.getNewDiary()
+          .then((diarys) =>{
+            // console.log(diarys)
+            res.render('diary',{"diarys":diarys})
            })
            })
 

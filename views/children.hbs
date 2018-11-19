@@ -11,32 +11,36 @@
 
 <body>
 
-<header>
-    <div class="main">
-        <ul>
-            <li> <a href="/">home</a></li>
-            <li><a href="addChild">Add Child</a></li>
-        </ul>
-    </div>
-</header>
+    <header>
+        <div class="main">
+            <ul>
+                <li> <a href="/">home</a></li>
+                <li><a href="addChild">Add Child</a></li>
+            </ul>
+        </div>
+    </header>
 
- <section class="list">
-    {{#each child}}
-    <div class="child-div">
+    <section class="list">
+        {{#each child}}
+        <div class="child-div">
+            <form class="childrenDeleteBut" method="POST" action="/delete/{{id}}">
+                <button  type="delete">DELETE</button>
+            </form>
+            <ul class="child-list">
+                <li class="child">Child Name: {{childname}}</li>
+                <li class="child">DOB: {{DOB}}</li>
+                <li class="child">{{gender}}</li>
 
-    <ul class="child-list">
-        <li class="child">Child Name: {{childname}}</li>
-        <li class="child">DOB: {{DOB}}</li>
-        <li class="child">{{gender}}</li>
 
-   
-    </ul>
-    <form method="POST" action="/delete/{{id}}">
-            <button type="delete">DELETE</button>
-    </form> 
-    </div>
-    {{/each}}
-</section> 
+            </ul>
+
+        </div>
+        {{/each}}
+
+
+
+
+    </section>
 
 </body>
 

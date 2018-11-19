@@ -10,24 +10,26 @@
 </head>
 
 <body>
+
+    <div class="diary"><a href="/">home</a></div>
+  
     <h1>{{child_name}}Diary</h1>
     <section>
-    <form action="/diary" method="post">
-        <input placeholder="what happen" type="text" name="diary" value="{{newDiary.diary}}"/>
-        {{!-- <input placeholder="photo" type="file" name="Image" /> --}}
-        <input type="submit" value="add diary" />
-    </form>
+        <form action="/diary" method="post">
+            <input placeholder="what happen" type="text" name="diary" value="{{newDiary.diary}}" />
+            <input placeholder="photo" type="file" name="Image" />
+            <input type="submit" value="add diary" />
+        </form>
 
-   
-    <ul>
-     {{#each newDiary}}
-    
-        <li>{{id}}</li>
-        <li>{{diary}}</li>
-        <li>{{newDiary.diary}}</li>
-        
-    {{/each}}
-    </ul>
+
+        <ul>
+            {{#each diarys}}
+
+            <li class="eachDiary" id="eachDiary">{{diary}}</li>
+            <img src="IMG_0166.jpg">
+
+            {{/each}}
+        </ul>
     </section>
 </body>
 

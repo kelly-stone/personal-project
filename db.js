@@ -42,12 +42,12 @@ function addChild(profile, testConn) {
 
 function getNewDiary(newDiary, db = connection){
   return db('diary')
-  .insert({diary:newDiary.diary})
+  .select()
   
 }
 
 function insertNewDiary(newDiary,db = connection){
-  console.log('are we getting data?:', newDiary)
+  // console.log('are we getting data?:', newDiary)
   return db('diary')
   .insert({diary:newDiary.diary})
 
