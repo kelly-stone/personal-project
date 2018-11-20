@@ -2,6 +2,10 @@ const express = require('express')
 const db = require('../db')
 const router = express.Router()
 
+// const multer = require('multer')
+// const parser = multer()
+//,parser.single('fileUpload')
+
 router.use(express.static('public'));
 router.use(express.urlencoded({ extended: true }))
 
@@ -47,6 +51,7 @@ const newData = {
   DOB: req.body.DOB,
   gender:req.body.gender
 }
+console.log(req.body)
   db.addChild(newData)
    .then(() =>{
     // console.log(newData)

@@ -1,13 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>You Are Growing</title>
+   <link rel="stylesheet" href="/child-form.css"> 
+  </head>
 
-<header>
-  
-            <a href="/">home</a>
+<body class="body">  
+<a href="/">home</a>
             
      
 </header>
-<h1>Add a new child</h1>
+<h1 class="header">Add a new child</h1>
 
-<form class="form" action="/addchild" method="post">
+<form class="login" action="/addchild" method="post">
   
   <label for="name" class="form-item">
     Child Name:
@@ -30,6 +36,14 @@
 
 
 
-  <input type="submit" name="" value="Submit">
+ Image:
+  <form class="form" action="/addchild" method="post"> 
+  <input type="file" name="fileupload" value="fileupload" id="fileupload"> 
+  <label for="fileupload"> </label> 
+  <input type="submit" value="submit">
+
 </form>
+
+</body>
+</html>
 
