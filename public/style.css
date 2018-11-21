@@ -19,6 +19,7 @@ ul li a{
     margin-bottom: 20px;
     margin-bottom: 10px;
     display: inline-block;
+    font-size: 20px;
 
 }
 .list {
@@ -51,26 +52,12 @@ ul li a{
 
 }
 
-#childrenDeleteBut{
-   
-    border: none;
-   
-    padding: 15px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin-left: 30%;
-    cursor: pointer;
-    background-color:rgb(124, 57, 57); 
-    border-radius: 8px;
 
-    
-}
 .child{
     list-style: none;
     width:800px; 
     padding-right: 100px;
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: rgb(156, 76, 76);
     margin-top: 10px;
 } 
@@ -97,19 +84,21 @@ ul li a{
     
 } 
 
-
+.Diary{
+    background-color:  rgb(221, 241, 253)
+}
 .diary{
-    background-color:#AED7F2;
+    background-color:rgb(109, 176, 221);
 
 }
 
 #eachDiary {
     list-style: none;
     width:60%;
-    height:240px;
+    height:180px;
     padding:10px;
-    border:8px 8px 3px 8px solid white;
-    background-color: rgb(203, 227, 244);
+    border:8px 8px 3px 8px solid rgb(208, 207, 207);
+    background-color: rgb(166, 210, 240);
     font-size: 1.5em;
     font-weight: 200;
     float:left;
@@ -119,7 +108,7 @@ ul li a{
 }
 
 img{
-    width: 23%;   
+    width: 22%;   
 }
 input[type=text] {
     width: 70%;
@@ -136,4 +125,7 @@ input[type=text] {
 input[type=submit]{
     font-size: 40px;
 
+}
+button[type=delete]{
+    font-size: 15px;
 }
